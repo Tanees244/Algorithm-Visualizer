@@ -1,41 +1,28 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./slider.css";
 
 const Slider = ({ onChange, disabled }) => {
   return (
-    <div className='wrapper'>
-      <form>
-        <div className='slider-title'>Select Speed</div>
-        <div className='speed-slider' onChange={onChange}>
-          <input
-            type='radio'
-            name='speed'
-            id='slow'
-            value={1000}
-            disabled={disabled}
-          />
-          <label htmlFor='slow' current-speed='Slow'></label>
-          <input
-            type='radio'
-            name='speed'
-            id='medium'
-            value={50}
-            defaultChecked
-            disabled={disabled}
-          />
-          <label htmlFor='medium' current-speed='Medium'></label>
-          <input
-            type='radio'
-            name='speed'
-            id='fast'
-            value={5} 
-            disabled={disabled}
-          />
-          <label htmlFor='fast' current-speed='Fast'></label>
-          <div className='slider-position'></div>
-        </div>
-      </form>
-    </div>
-  )
-}
 
-export default Slider
+    <div onChange={onChange}>
+          <div className="title">Select Speed</div>
+     			<div class="hidden-toggles">
+				
+				<input name="coloration-level" type="radio" id="slow" value={500} class="hidden-toggles__input" disabled={disabled}/>
+				<label for="slow" class="hidden-toggles__label">Low</label>
+				
+				<input name="coloration-level" type="radio" id="medium" value={200} class="hidden-toggles__input" disabled={disabled}/>
+				<label for="medium" class="hidden-toggles__label">Medium</label>	
+				
+				<input name="coloration-level" type="radio" id="high" value={80} class="hidden-toggles__input" disabled={disabled}/>
+				<label for="high" class="hidden-toggles__label">High</label>
+				
+				<input name="coloration-level" type="radio" id="coloration-striking" value={5} class="hidden-toggles__input" disabled={disabled}/>
+				<label for="coloration-striking" class="hidden-toggles__label">Striking</label>
+				
+			</div>
+    </div>
+  );
+};
+
+export default Slider;

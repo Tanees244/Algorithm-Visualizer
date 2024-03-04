@@ -2,21 +2,24 @@
   padding: 12px 32px;
   font-size: 1rem;
   text-transform: uppercase;
-  background: rgb(248, 217, 15) ;
-  color: #222;
-  border: 1px solid white;
-  font-weight: 600;
+  color: #000000;
+  border: 2px solid white;
+  font-weight: bold;
   cursor: pointer;
+  height: 80px;
+  width: 150px;
+  margin-top: 40px;
+  border-radius: 50px;
+  position: relative; /* Ensure proper positioning of the reload icon */
 }
 
 .sort {
-  background-color:  rgb(248, 217, 15) ;
+  background-color: rgb(248, 217, 15);
 }
 
 .sort:hover {
-  background-color: #b28e22;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #574100;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sort:active {
@@ -25,15 +28,67 @@
 }
 
 .newArray {
-  background-color: rgb(248, 217, 15);
+  background-color: rgb(24, 107, 162);
 }
 
 .newArray:hover {
-  background-color: #c89828;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #004164;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .button:active {
   transform: translateY(2px);
+}
+
+.reloadimage{
+  height: 40px;
+  width: 40px;
+  animation: pop-out 0.5s ease-in forwards, rotate 1s linear infinite; /* Pop-out and rotate animations */
+}
+
+.swapimage {
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  animation: jiggle 1s ease-in-out forwards; /* Jiggle animation */
+}
+
+@keyframes jiggle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

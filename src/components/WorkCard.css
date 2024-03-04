@@ -15,7 +15,45 @@
 .Project-Card{
     background: rgba(14,13,21,255);
     padding: 1.2rem 1rem;
+    position: relative; /* Position relative for absolute positioning of border element */
+    overflow: hidden;
 }
+  
+  .Project-Card::before,
+  .Project-Card::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: rgb(120, 116, 137);
+    transition: width 0.8s ease; /* Transition the width property */
+  }
+  
+  .Project-Card::before {
+    top: 0; /* Position top border */
+    left: 0;
+  }
+  
+  .Project-Card::after {
+    bottom: 0; /* Position bottom border */
+    right: 0;
+  }
+  
+  .Project-Card:hover::before,
+  .Project-Card:hover::after {
+    width: 100%; /* Increase the width to 100% upon hovering */
+    animation: animateBorder 2s linear infinite; /* Apply the animation */
+  }
+  
+  @keyframes animateBorder {
+    0% {
+      transform: scaleX(0); /* Start with no width */
+    }
+    50% {
+      transform: scaleX(1); /* Increase to full width */
+    }
+  }
+  
 
 .Project-Card img{
     width: 320px;
@@ -24,7 +62,12 @@
 
 .Project-Title{
     color: white;
-    padding:1rem 0;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.Project-Details {
+    height: 200px;
 }
 
 .Project-Details p{
@@ -36,7 +79,7 @@
 
 .Project-btn{
     padding: 0 0 1rem;
-    display: flex;
+    text-align: center;
 }
 
 
@@ -49,5 +92,11 @@
     .Project-Card img{
         width:100%;
         height:400px;
+    }
+    .Project-Card .Project-btn{
+        justify-content: center;
+    }
+    .Project-Card .Project-Title{
+        text-align: center;
     }
 }

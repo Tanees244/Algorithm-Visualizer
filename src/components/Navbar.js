@@ -1,49 +1,51 @@
-import "./Navbar.css"
-import React, { useState } from 'react'
-import { Link } from "react-router-dom"
-import { FaBars, FaTimes } from "react-icons/fa"
-
+import "./Navbar.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
-    const[color, setColor] = useState(false);
-    const changeColor = () =>{
-      if(window.scrollY >= 100){
-        setColor(true);
-      }else{
-        setColor(false);
-      }
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 100) {
+      setColor(true);
+    } else {
+      setColor(false);
     }
+  };
 
-    window.addEventListener("scroll",changeColor);
+  window.addEventListener("scroll", changeColor);
 
-    return (
-    <div className={color ? "header header-bg" :
-    "header"}>
-      <Link to ="/">
+  return (
+    <div className={color ? "header header-bg" : "header"}>
+      <Link to="/">
         <h1>
-            <span>A</span>lgorithm 
-            <span>V</span>isualizer.</h1>
+          <span>A</span>lgorithm
+          <span> V</span>isualizer.
+        </h1>
       </Link>
-      <ul className={click ? "nav-menu active" :
-        "nav-menu"}>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-            <Link to ="/">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-            <Link to ="/Sorting">Sorting</Link>
+          <Link to="/Sorting">Algorithms</Link>
         </li>
         <li>
-            <Link to ="/About">About</Link>
+          <Link to="/About">About</Link>
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>
-        { click ? (<FaTimes size={20} style={{color: "#fff"}}/>) :
-        (<FaBars size={20} style={{color: "#fff"}}/>)}
+        {click ? (
+          <FaTimes size={20} style={{ color: "#fff" }} />
+        ) : (
+          <FaBars size={20} style={{ color: "#fff" }} />
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

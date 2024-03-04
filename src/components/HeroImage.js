@@ -1,23 +1,24 @@
 import "./HeroImage.css";
 import backimage from "../assets/image2.jpg";
 import React from "react";
-import { Link } from "react-router-dom";;
- 
+import { Link } from "react-router-dom";
+
 const HeroImage = () => {
   return (
     <div className="Hero">
       <div className="Mask">
-        <img className="backimage" src = {backimage} alt = "backimage"/>
+        <img className="backimage" src={backimage} alt="backimage" />
       </div>
       <div className="content">
-        <p>Algorithms</p>
         <h1>Sorting</h1>
         <div>
-            <Link to="/Sorting" className="btn">Sorting</Link>
+          <Link to="/Sorting" className="btn">
+            Algorithms
+          </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default HeroImage;

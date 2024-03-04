@@ -1,7 +1,7 @@
 .container3{
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    margin-top: 50px;
 }
 
 .sortingBars{
